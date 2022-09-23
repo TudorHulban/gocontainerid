@@ -1,33 +1,39 @@
-# gocontainerid
-## create image
+# helm homework
+## Docker
+### create image
 ```sh
 docker build -t goapp .
 ```
-## list images
+### list images
 ```sh
 docker image ls
 ```
-## delete all images
+### delete all images
 ```sh
 docker images -q |xargs docker rmi -f
 ```
-## create container
+### create container
 ```sh
 docker run -d -p 8000:8000 --name container_name -it goapp
 ```
-## list containers
+### list containers
 ```sh
 docker ps -a
 ```
-## delete all containers
+### delete all containers
 ```sh
 docker rm -f `docker ps --no-trunc -aq`
 ```
-## check container logs
+### check container logs
 ```sh
 docker logs $container_id
 ```
-## connect to container
+### connect to container
 ```sh
 docker container exec -it container_name /bin/sh
+```
+## Helm
+### check autoscaling
+```sh
+kubectl api-versions | grep autoscaling
 ```
